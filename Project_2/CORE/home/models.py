@@ -8,8 +8,12 @@ class Student(models.Model):
     address = models.TextField()
     image = models.ImageField()
     file = models.FileField()
-    
-    def __str__(self):
-        return self.name , self.age , self.address
+
+class Car(models.Model):
+    car_name = models.CharField(max_length = 100)
+    speed = models.IntegerField(default = 50)
+
+    def _str_(self):
+        return self.car_name
 
     
