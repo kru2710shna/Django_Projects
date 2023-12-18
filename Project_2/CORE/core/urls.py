@@ -19,7 +19,9 @@ from django.urls import path
 from home.views import *
 
 urlpatterns = [
-    path("" , home , name = "home"),
-    path("success_page/" , success_page , name="success_page"),
+    path("" , home , name = "Home"),
+    path("contact/" , contact , name = "contact"),
+    path("about/" , about , name = "about"),
+    #path("success_page/" , success_page , name="success_page"),
     path("admin/", admin.site.urls),
 ]

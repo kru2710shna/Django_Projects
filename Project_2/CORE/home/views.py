@@ -4,7 +4,19 @@ from django.shortcuts import render
 from django.http import HttpResponse
 def home(request):
     #return HttpResponse("Hey!! This is my first Http Response")
-    return render(request , "index.html")
+    peoples = [
+        {'name' : 'Abhi' , 'age' : 30},
+        {'name' : 'Jay' , 'age' : 20},
+        {'name' : 'Rey' , 'age' : 10}
+    ]
+    
+    
+    return render(request , "index.html", context = {'Page ': 'Django' , 'peoples':peoples})
 
-def success_page(request):
-    return HttpResponse("This is Success Page")
+def about(request):
+    context = { "Page" : "about"}
+    return render(request, "about.html" , context)
+
+def contact(request):
+    co = { "Page" : "contact"}
+    return render(request, "contact.html" , co)

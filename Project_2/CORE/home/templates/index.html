@@ -1,19 +1,47 @@
-<!DOCTYPE html> 
-<html Lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content= "IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django  WorkSpace</title>
+{% extends "base.html" %}
+{% block start %}
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+    </style>
+<body>
+    <a href="/contact/">
+        Contact
+    </a>
+    <a href="/contact/">
+        About
+    </a>
+
     <h1> Use </h1>
     <p>
         Django is a high-level web framework for building web 
-        applications using the Python programming language. 
-        It follows the model-view-controller (MVC) architectural 
-        pattern, emphasizing the "Don't Repeat Yourself" (DRY) 
-        and "Convention Over Configuration" principles.
-    </p>
-</head>
-<body>
-</body> 
-</html>
+        applications using the Python programming language.</p>
+    {{peoples}}
+    <table class= "container">
+        <tr>
+          <th>Sr No.</th>
+          <th>Name</th> 
+          <th>Age</th>
+          <th> Can Vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td> 
+          <td>{{people.age}}</td>
+          <td {% if people.age < 18 %} style = "background: red" {% endif %}> 
+            {% if people.age >= 18 %}
+            👍
+            {% else %}
+            👎
+            {% endif%}
+          </td>
+        </tr>
+
+         {% endfor %}
+      </table>
+
+{% endblock %}
