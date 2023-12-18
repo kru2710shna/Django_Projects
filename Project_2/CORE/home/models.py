@@ -8,3 +8,8 @@ class Student(models.Model):
     address = models.TextField()
     image = models.ImageField()
     file = models.FileField()
+    
+    def __str__(self):
+        return self.name , self.age , self.address
+
+    
