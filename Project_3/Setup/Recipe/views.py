@@ -19,3 +19,5 @@ def recipe(request):
     context = {'Recipe' : queryset}
     return render(request , "recipt.html", context)
  
+def delete_recipe(request, id):
+    return redirect('/recipe/')

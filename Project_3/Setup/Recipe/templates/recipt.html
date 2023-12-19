@@ -31,6 +31,7 @@
         <th scope="col">Recipe Name</th>
         <th scope="col">Recipe Description</th>
         <th scope="col">Recipe Image</th>
+        <th scope ="col">Actions </th>
       </tr>
     </thead>
     <tbody>
@@ -39,7 +40,11 @@
         <th scope="row">{{forloop.counter}}</th>
         <td>{{res.recipe_name}}</td>
         <td>{{res.recipe_description}}</td>
-        <td>{{res.recipe_image}}</td>
+        <td>
+          <img src = "/media/{{res.recipe_image}}" alt = "Recipe Image"></td>
+        <td>
+          <button class="btn btn-danger">Delete
+        </td>
       </tr>
       {% endfor %}
     </tbody>

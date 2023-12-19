@@ -27,11 +27,12 @@ urlpatterns = [
     path("contact/" , contact , name = "contact"),
     path("about/" , about , name = "about"),
     path("admin/", admin.site.urls),
-    path("recipe/" , recipe , name="recipt")
+    path("recipe/" , recipe , name="recipt"),
+    path("delete_reipe/<id>/" , delete_recipe , name = "delete_recipe"),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, 
-                          doument_root = settings.MEDIA_ROOT)
+                          document_root = settings.MEDIA_ROOT)
     
 urlpatterns+= staticfiles_urlpatterns() 
