@@ -24,9 +24,31 @@
     <button type = "submit" class = "btn btn-success"> Add Recipe</button>
 
 </form>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Recipe Name</th>
+        <th scope="col">Recipe Description</th>
+        <th scope="col">Recipe Image</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for res in Recipe %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{res.recipe_name}}</td>
+        <td>{{res.recipe_description}}</td>
+        <td>{{res.recipe_image}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 <a href="/"> Home </a>
 | 
 <a href="/contact/"> Contact </a>
 | 
 <a href="/about/"> About </a>
+
+{{Recipe}}
 {% endblock %}

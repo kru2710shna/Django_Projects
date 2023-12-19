@@ -13,6 +13,9 @@ def recipe(request):
             recipe_description=recipe_description,
             recipe_name = recipe_name
         )
-        
-    return render(request , "recipt.html")
+        return redirect('/recipe/')
+    
+    queryset = Recipe.objects.all()
+    context = {'Recipe' : queryset}
+    return render(request , "recipt.html", context)
  
