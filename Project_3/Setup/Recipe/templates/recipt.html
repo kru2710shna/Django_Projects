@@ -41,9 +41,9 @@
         <td>{{res.recipe_name}}</td>
         <td>{{res.recipe_description}}</td>
         <td>
-          <img src = "/media/{{res.recipe_image}}" alt = "Recipe Image"></td>
+          <img src = "/media/{{res.recipe_image}}" style="height : 100px"alt = "Recipe Image"></td>
         <td>
-          <button class="btn btn-danger">Delete
+          <a href= "/delete_reipe/{{res.id}}/" class="btn btn-danger">Delete
         </td>
       </tr>
       {% endfor %}

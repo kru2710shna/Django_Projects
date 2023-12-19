@@ -20,4 +20,6 @@ def recipe(request):
     return render(request , "recipt.html", context)
  
 def delete_recipe(request, id):
+    queryset = Recipe.objects.get(id=id)
+    queryset.delete()
     return redirect('/recipe/')
