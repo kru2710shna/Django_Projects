@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "Recipt_Home",
-    "Recipt",
 ]
+EXTERNAL_APPS = ["Recipe_Home", "Recipe"]
+INSTALLED_APPS += EXTERNAL_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

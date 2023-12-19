@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block start %}
+
+<h2>Recipe Page</h2><br>
+
+<form class= "col-6 mx-auto card p-3 shadow-lg" method= "post" enctype = "multipart/form-data">
+    {% csrf_token %}
+    <h2>Add Recipe</h2>
+    <hr>
+    <div class="rn">
+    <label for="fname">Recipe name</label><br>
+    <input name= "recipe_name" required type="text"><br>
+    </div>
+
+    <div class= "rd">
+    <label for="lname">Recipe Description</label><br>
+    <textarea class = "form-control" required name = "recipe_description"> </textarea>
+    </div>
+
+    <div class= "ri">
+        <label for="lname">Recipe Image</label><br>
+        <input name= "recipe_image" type="file">
+        </div><br>
+    <button type = "submit" class = "btn btn-success"> Add Recipe</button>
+
+</form>
+<a href="/"> Home </a>
+| 
+<a href="/contact/"> Contact </a>
+| 
+<a href="/about/"> About </a>
+{% endblock %}
