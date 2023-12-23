@@ -29,6 +29,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("recipe/" , recipe , name="recipt"),
     path("delete_reipe/<id>/" , delete_recipe , name = "delete_recipe"),
+    path("update_recipe/<id>/" , update_recipe , name="update_recipe"),
 ]
 
 if settings.DEBUG:

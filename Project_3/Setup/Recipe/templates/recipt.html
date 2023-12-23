@@ -43,7 +43,8 @@
         <td>
           <img src = "/media/{{res.recipe_image}}" style="height : 100px"alt = "Recipe Image"></td>
         <td>
-          <a href= "/delete_reipe/{{res.id}}/" class="btn btn-danger">Delete
+          <a href= "/delete_reipe/{{res.id}}/" class="btn btn-danger m-2">Delete </a><br>
+          <a href= "/update_recipe/{{res.id}}/" class="btn btn-success"> Update</a>
         </td>
       </tr>
       {% endfor %}
@@ -55,5 +56,5 @@
 | 
 <a href="/about/"> About </a>
 
-{{Recipe}}
+
 {% endblock %}
