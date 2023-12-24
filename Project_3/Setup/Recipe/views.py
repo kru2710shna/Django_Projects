@@ -17,6 +17,8 @@ def recipe(request):
         return redirect('/recipe/')
     
     queryset = Recipe.objects.all()
+    if request.GET.get('search'):
+        queryset = queryset.filter(recipe_name__icontains = request.GET.get('search') )
     context = {'Recipe' : queryset}
     return render(request , "recipt.html", context)
  
@@ -40,6 +42,7 @@ def update_recipe(request, id):
         
         if recipe_image:
             queryset.recipe_image = recipe_image
+        
             
         queryset.save()
         return redirect('/recipe/')
